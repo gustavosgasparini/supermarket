@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %} Details {% endblock %}
+
+{% block main %}
+
+<h1 class="color">Product Details</h1>
+<hr class="color">
+<div class="row">
+    <div class="col-sm-3">
+        <img src="{{products.photo.url}}" class="card-img-dtl" alt="{{products.product_name}}">
+    </div>
+    <div class="col-sm-9">
+        <div class="card card-details">
+            <div class="card-body">
+                <h1 class="card-title color-edit">{{products.product_name}}</h1>
+                <p class="color-edit-edit">Type {{products.product_type}} - {{products.product_code}}</p>
+                <br>
+                <p class="card-text color">{{products.description}}</p>
+                <hr class="color">
+
+                <h2 class="color float-sm-right">{{products.price}}<span class="color">/kg</span></h2>
+                <p class="card-text color-grey">Expiration: {{products.expiration_date}} <br> Manufacture: {{products.manufacture_date}}</p>
+            </div>
+        </div>
+        <div class="float-sm-right">
+            <a href="{% url 'prod_update' products.pk %}" class="btn btn-light btn-edit-media"><i class="fas fa-pencil-alt"></i> Update</a>
+            <a href="{% url 'prod_list' %}" class="btn btn-primary btn-edit-media"><i class="fas fa-list-ul"></i> Products</a>
+            <a href="{% url 'prod_delete' products.pk %}" class="btn btn-danger btn-edit-media"><i class="fas fa-trash-alt"></i> Delete</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

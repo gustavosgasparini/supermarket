@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block main %}
+    
+    <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by sergey_kandakov - www.freepik.com</a> -->
+    
+    <h1 class="color">Supermarket</h1>
+    <hr class="color">
+    <p class="text-lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est iure soluta at quas impedit consectetur possimus animi amet. Recusandae repellat quibusdam, accusantium voluptates blanditiis, veniam ad vero laborum at possimus accusamus aut suscipit nemo ducimus dolor praesentium. Nulla, temporibus libero quo corrupti illum, pariatur neque, quae esse aliquam modi ipsam consectetur quidem nesciunt aspernatur molestias reprehenderit explicabo saepe voluptas! In minus exercitationem id accusantium sequi ut aliquam quam suscipit corporis modi harum iusto voluptatem ipsum numquam eaque ab saepe sint explicabo eveniet, ipsam, odio consectetur architecto quod? Dolore itaque praesentium nesciunt omnis obcaecati. Rem molestias deleniti fuga, itaque doloribus non?</p>
+    <p class="text-lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est iure soluta at quas impedit consectetur possimus animi amet. Recusandae repellat quibusdam, accusantium voluptates blanditiis, veniam ad vero laborum at possimus accusamus aut suscipit nemo ducimus dolor praesentium. Nulla, temporibus libero quo corrupti illum, pariatur neque, quae esse aliquam modi ipsam consectetur quidem nesciunt aspernatur molestias reprehenderit explicabo saepe voluptas! In minus exercitationem id accusantium sequi ut aliquam quam suscipit corporis modi harum iusto voluptatem ipsum numquam eaque ab saepe sint explicabo eveniet, ipsam, odio consectetur architecto quod? Dolore itaque praesentium nesciunt omnis obcaecati. Rem molestias deleniti fuga, itaque doloribus non?</p>
+    {% if user.is_authenticated %}
+        <a href="{% url 'prod_list' %}" class="btn btn-primary btn-edit"><i class="fas fa-list-ul"></i> Products</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary btn-edit">Login</a>  
+    {% endif %}
+    
+    
+    
+
+  
+{% endblock %}
+
+{% block footer %}  
+{% endblock  %}

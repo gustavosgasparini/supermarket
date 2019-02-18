@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %} Products list {% endblock %}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h1 class="color">Products List</h1>
+        </div>
+        <div class="col-sm-4">
+            <div class="float-sm-right">
+                <a href="{% url 'prod_new' %}" class="btn btn-primary btn-edit-margin">New Product</a>
+            </div>
+        </div>
+    </div>
+    <hr class="color">
+    
+    
+    {% for prod in products  %}
+        <div class="card mb-3 card-color" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-sm-4 img-size">
+                    <img src="{{prod.photo.url}}" class="card-img" alt="{{prod.product_name}}">
+                </div>
+                <div class="col-sm-8">
+                    <div class="card-body">
+                        <h4 class="card-title card-edit">{{prod.product_name}}</h4>
+                        <small class="text-muted">{{prod.product_type}}</small>
+                        <p class="card-text">{{prod.description}}</p>
+                        <p class="card-text"><small class="text-muted">Man: {{prod.manufacture_date}} / Exp: {{prod.expiration_date}} </small></p>
+                        <a href="{% url 'prod_details' prod.pk %}" class="btn btn-primary btn-sm"><i class="fas fa-clipboard-list"></i> Details</a>
+                        <a href="{% url 'prod_delete' prod.pk %}" class="btn btn-danger btn-sm" style="float: right; margin-left: 5px;"><i class="fas fa-trash-alt"></i> Delete</a>
+                        <a href="{% url 'prod_update' prod.pk %}" class="btn btn-warning btn-sm" style="float: right;"><i class="fas fa-pencil-alt"></i> Update</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %} 
+    <div class="clear"></div>
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

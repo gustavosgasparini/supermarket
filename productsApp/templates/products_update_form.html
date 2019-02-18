@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap %}
+
+{% block title %} Update Product {% endblock %}
+
+{% block main %}
+    <h1 class="color">Update Product</h1>
+    <p class="text-lorem">*All spaces must be filled</p>
+    <hr class="color">
+
+    <div class="row">
+        <div class="col-md-8">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <button type="submit" class="btn btn-primary btn-edit">Update</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'css/img/form-bg.jpg' %}" class="d-lg-block d-none img-change">
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

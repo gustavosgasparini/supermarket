@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Details {% endblock %}
+
+{% block main %}
+
+    <h1 class="color">Delete Product</h1>
+    <hr class="color">
+    <p class="text-lorem">Are you sure you want to delete the product <strong>{{products.product_name}}</strong> of code <strong>{{products.product_code}}</strong></p>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-danger btn-edit"><i class="fas fa-pencil-alt"></i> Delete</button>
+        <a href="{% url 'prod_details' products.pk %}" class="btn btn-primary btn-edit"><i class="fas fa-clipboard-list"></i> Details</a>
+    </form>
+    
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

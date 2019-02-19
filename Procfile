@@ -1,0 +1,1 @@
+web: gunicorn Supermarketi.wsgi --log-file -

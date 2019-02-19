@@ -17,7 +17,14 @@ def prod_logout(request):
 
 @login_required
 def prod_list(request):
-    products = Product.objects.order_by('product_type')
+    search_term = request.GET.get('search', None)
+
+    if search_term:
+        products = Product.objects.all()
+        products = products.filter(product_name__icontains=search_term)
+    else:
+        products = Product.objects.order_by('product_type')
+
     return render(request, 'products_list.html', {'products': products})
 
 

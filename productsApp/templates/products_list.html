@@ -5,11 +5,21 @@
 {% block main %}
 
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-4">
             <h1 class="color">Products List</h1>
         </div>
-        <div class="col-sm-4">
-            <div class="float-sm-right">
+        <div class="col-sm-8">
+            <div class="float-sm-left">
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search" id="search" name="search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>   
+            </div>
+            <div class="float-sm-right">                
                 <a href="{% url 'prod_new' %}" class="btn btn-primary btn-edit-margin">New Product</a>
             </div>
         </div>
